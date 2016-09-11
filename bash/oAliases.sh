@@ -1,0 +1,1 @@
+alias gpom="git push -u origin master"

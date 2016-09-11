@@ -1,0 +1,41 @@
+# Automatically log in to this mailbox at startup
+set spoolfile="imaps://oalemi@connect.sfu.ca/"
+# Define the = shortcut, and the entry point for the folder browser (c?)
+set folder="imaps://oalemi@connect.sfu.ca/"
+set record="=Sent"
+set postponed="=Drafts"
+
+set smtp_url="smtp://oalemi@mailgate.sfu.ca:587/"
+
+
+# activate TLS if available on the server
+ set ssl_starttls=yes
+ # always use SSL when connecting to a server
+ set ssl_force_tls=yes
+ # Don't wait to enter mailbox manually 
+ #unset imap_passive        
+ # Automatically poll subscribed mailboxes for new mail (new in 1.5.11)
+ set imap_check_subscribed
+ # Reduce polling frequency to a sane level
+ #set mail_check=60
+ # And poll the current mailbox more often (not needed with IDLE in post 1.5.11)
+ #set timeout=10
+ # keep a cache of headers for faster loading (1.5.9+?)
+ set header_cache=~/.hcache
+ # Display download progress every 5K
+ set net_inc=5
+ set sort=reverse-date-received
+
+ macro index A ":set confirmappend=no delete=yes\n<save-message>=INBOX/Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+
+
+set from = 'oalemi@sfu.ca' # default: '(empty)'
+#set reply_to = 'oalemi@sfu.ca'
+set realname = 'Omid Alemi' # default: '(empty)'
+set hidden_host = yes # default: no
+set imap_check_subscribed = yes # default: no
+set forward_quote = yes # default: no
+set envelope_from = yes
+
+
+

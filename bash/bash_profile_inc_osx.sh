@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Aliases
+source /Users/omid/Code/CodeOnTitan/dotfiles/bash/oAliases.sh
+
+# My Paths
+export PATH=/Users/omid/Code/CodeOnTitan/dotfiles/git:$PATH
+export PATH=/Users/omid/Code/CodeOnTitan/dotfiles/scripts:$PATH
+export PATH=/Users/omid/Code/CodeOnTitan/dotfiles/scripts2:$PATH
+
 # Paths
 export PATH=/Developer/NVIDIA/CUDA-7.5/bin:$PATH
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.5/lib:/Users/omid/Code/cuda:/usr/local/cuda/lib/:$DYLD_LIBRARY_PATH

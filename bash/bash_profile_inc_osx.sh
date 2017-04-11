@@ -1,19 +1,27 @@
 #!/bin/bash
 
 # Aliases
-source /Users/omid/Code/CodeOnTitan/dotfiles/bash/oAliases.sh
+source /Users/omid/Code/CodeSync/dotfiles/bash/oAliases.sh
 
 # My Paths
-export PATH=/Users/omid/Code/CodeOnTitan/dotfiles/git:$PATH
-export PATH=/Users/omid/Code/CodeOnTitan/dotfiles/scripts:$PATH
-export PATH=/Users/omid/Code/CodeOnTitan/dotfiles/scripts2:$PATH
+export PATH=/Users/omid/Code/CodeSync/dotfiles/git:$PATH
+export PATH=/Users/omid/Code/CodeSync/dotfiles/scripts:$PATH
+export PATH=/Users/omid/Code/CodeSync/dotfiles/scripts2:$PATH
+export PATH=/Users/omid/Code/CodeSync/jlog:/Users/omid/apps/:$PATH
+export PATH=$PATH:/Users/omid/Library/Android/sdk/ndk-bundle
 
-# Paths
-export PATH=/Developer/NVIDIA/CUDA-7.5/bin:$PATH
-export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.5/lib:/Users/omid/Code/cuda:/usr/local/cuda/lib/:$DYLD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.5/lib:/Users/omid/Code/cuda/lib:/usr/local/cuda/lib/:$LD_LIBRARY_PATH
+# Paths and Libs
+export PATH=/usr/local/cuda/bin:$PATH
+export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib:$LD_LIBRARY_PATH
 
 export PYTHONPATH=/Users/omid/Code/caffe/distribute/python:$PYTHONPATH
+
+export NACL_SDK_ROOT=/Users/omid/Code/Libs/nacl_sdk/pepper_49
+
+# Torch
+
+. /Users/omid/torch/install/bin/torch-activate
 
 # Colors
 export PS1="\[\033[33m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
@@ -44,3 +52,6 @@ GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
     source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
+
+# use ignore space
+HISTCONTROL="ignorespace"

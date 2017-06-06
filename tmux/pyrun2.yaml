@@ -1,0 +1,13 @@
+session_name: pyrun
+windows:
+- focus: 'true'
+  layout: 7d95,205x50,0,0{119x50,0,0,1,85x50,120,0[85x28,120,0,2,85x11,120,29,4,85x9,120,41,3]}
+  options:
+    automatic-rename: 'off'
+  panes:
+  - source activate tf1py27 && ls
+  - source activate tf1py27
+  - watch --color "ps -eo user,pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head"
+  - watch --color -n1.0 "gpustat -cpu"
+  start_directory: /home/omid/CodeOnTitan
+  window_name: bash

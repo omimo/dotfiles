@@ -1,0 +1,23 @@
+session_name: day
+windows:
+- focus: 'true'
+  layout: ddc5,205x50,0,0{87x50,0,0,40,117x50,88,0[117x33,88,0,41,117x16,88,34{72x16,88,34,42,22x16,161,34,45,21x16,184,34,43}]}
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command: mutt
+  - newsbeuter
+  - bash
+  - cal
+  - jcal
+  start_directory: /Users/omid
+  window_name: MyDay
+- layout: d7c4,205x50,0,0,44
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command: curl wttr.in
+  start_directory: /Users/omid
+  window_name: wttr

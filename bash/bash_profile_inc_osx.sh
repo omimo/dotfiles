@@ -7,7 +7,7 @@ source /Users/omid/Code/CodeSync/dotfiles/bash/oAliases.sh
 export PATH=/Users/omid/Code/CodeSync/dotfiles/git:$PATH
 export PATH=/Users/omid/Code/CodeSync/dotfiles/scripts:$PATH
 export PATH=/Users/omid/Code/CodeSync/dotfiles/scripts2:$PATH
-export PATH=/Users/omid/Code/CodeSync/jlog:/Users/omid/apps/:$PATH
+export PATH=/Users/omid/Code/CodeSync/jlog:/Users/omid/apps/:/Users/omid/apps/nvim-osx64/bin:$PATH
 export PATH=$PATH:/Users/omid/Library/Android/sdk/ndk-bundle
 
 # Paths and Libs
@@ -16,9 +16,13 @@ export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib:$LD_LIBRARY_PATH
 
 export PYTHONPATH=/Users/omid/Code/caffe/distribute/python:$PYTHONPATH
-
 export NACL_SDK_ROOT=/Users/omid/Code/Libs/nacl_sdk/pepper_49
 
+export PATH=/Applications/MATLAB_R2016a.app/bin/:$PATH
+
+export PATH=/usr/local/bin:$PATH
+
+export PATH=/Users/omid/anaconda/bin:$PATH
 # Torch
 
 . /Users/omid/torch/install/bin/torch-activate
@@ -55,3 +59,13 @@ fi
 
 # use ignore space
 HISTCONTROL="ignorespace"
+
+
+# Android
+
+export ANDROID_HOME=${HOME}/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
+# Tiny Care Terminal
+source /Users/omid/Code/CodeSync/dotfiles/configs/tiny-care-env

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ITEM=$1
+STATE=$2
+
+KEY="cVE4dRohwmqBCIgrNdEhdl"
+BASEURL="https://maker.ifttt.com/trigger"
+
+#echo ${BASEURL}/${ITEM}_${STATE}/with/key/${KEY}
+curl ${BASEURL}/${ITEM}_${STATE}/with/key/${KEY}

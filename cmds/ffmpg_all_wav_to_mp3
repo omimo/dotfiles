@@ -1,0 +1,1 @@
+find . -name \*.wav -exec basename {} .wav \; | xargs -I {} ffmpeg  -i {}.wav -b:a 96k -write_xing 0 {}.mp3

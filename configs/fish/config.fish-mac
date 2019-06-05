@@ -1,0 +1,35 @@
+#source /Users/omid/anaconda/etc/fish/conf.d/conda.fish
+#export TERM=screen-256color
+source ~/anaconda3/etc/fish/conf.d/conda.fish
+export fish_term24bit=1
+export PASSWORD_STORE_GPG_OPTS='--no-throw-keyids'
+
+# THEME PURE #
+set fish_function_path /Users/omid/.config/fish/functions/theme-pure/functions/ $fish_function_path
+source /Users/omid/.config/fish/functions/theme-pure/conf.d/pure.fish
+
+
+## From bash_profile
+export PATH="$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin"
+
+export PATH="/Users/omid/anaconda3/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/apps/flutter/bin:$PATH"
+export PATH="$HOME/apps/bin:/Users/omid/Code/CodeSync/dotfiles/scripts:/Users/omid/Code/CodeSync/dotfiles/scripts2:/Users/omid/.local/bin:/usr/local/Cellar/emacs-plus/26.2/bin:$PATH"
+
+#source /Users/omid/Code/CodeSync/dotfiles/bash/bash_profile_inc_osx.sh
+export PATH="/usr/local/opt/openal-soft/bin:$PATH"
+
+export PATH="$HOME/Code/Libs/Qt/5.11.2/clang_64/bin/:$PATH"
+
+
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$PATH:$ANDROID_HOME/tools"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+export PATH="$PATH:/Users/omid/Library/Android/sdk/ndk-bundle"
+
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/Cellar/libffi/3.2.1/lib/pkgconfig"
+
+
+export PATH="/Developer/NVIDIA/CUDA-10.1/bin:$PATH"
+export LD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-10.1/lib:/usr/local/cuda/lib:$LD_LIBRARY_PATH"

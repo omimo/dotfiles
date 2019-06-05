@@ -1,0 +1,151 @@
+"execute pathogen#infect()
+
+set shell=/bin/bash
+
+filetype plugin indent on
+syntax on
+set backspace=2
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+if has("termguicolors")
+    set termguicolors
+endif
+
+if &term =~# '^screen'
+    let &t_8f = "[38:2:%lu:%lu:%lum"
+    let &t_8b = "[48:2:%lu:%lu:%lum"
+endif
+
+if &term =~ '256color'
+    " Disable Background Color Erase (BCE) so that color schemes
+    " work properly when Vim is used inside tmux and GNU screen.
+    set t_ut=
+endif
+
+if exists('+termguicolors')
+  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
+let mapleader=" "
+set mouse=a
+
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>b :TagbarToggle<CR><C-w><Right>
+" Enable folding
+"set foldmethod=indent
+"set foldlevel=99
+ "Enable folding with the spacebar
+ "nnoremap <space> za
+
+"let g:SimpylFold_docstring_preview=1
+
+set nu
+
+" Indent
+"au BufNewFile,BufRead *.py
+"    \ set tabstop=4
+"    \ set softtabstop=4
+"    \ set shiftwidth=4
+"    \ set textwidth=79
+"    \ set expandtab
+"    \ set autoindent
+"    \ set fileformat=unix
+"
+"au BufNewFile,BufRead *.js, *.html, *.css
+"    \ set tabstop=2
+"    \ set softtabstop=2
+"    \ set shiftwidth=2
+
+
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'kien/ctrlp.vim'
+"Plug 'tpope/vim-fugitive'
+"Plug 'vim-scripts/indentpython.vim'
+"Plug 'Valloric/YouCompleteMe'
+Plug 'ayu-theme/ayu-vim'
+Plug 'majutsushi/tagbar'
+Plug 'flazz/vim-colorschemes'
+"Plug 'tmhedberg/SimpylFold'
+Plug 'leafgarland/typescript-vim'
+Plug 'rust-lang:/rust.vim'
+Plug 'scrooloose/syntastic'
+Plug 'Valloric/MatchTagAlways'
+Plug 'EinfachToll/DidYouMean'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'chrisbra/csv.vim'
+Plug 'mzlogin/vim-markdown-toc'
+Plug 'kassio/neoterm'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'racer-rust/vim-racer'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'nanotech/jellybeans.vim', { 'tag': 'v1.6' }
+Plug 'jacoborus/tender.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'cespare/vim-toml'
+
+call plug#end()
+
+
+"rust stuff
+set hidden
+let g:racer_cmd = "/home/omid/.cargo/bin/racer"
+
+
+"load ftplugins and indent files
+filetype plugin on
+filetype indent on
+
+"turn on syntax highlighting
+syntax on
+
+"nerdtree settings
+let g:NERDTreeMouseMode = 2
+let g:NERDTreeWinSize = 20
+let g:NERDTreeMinimalUI = 0
+
+"let ayucolor="light"  " for light version of theme
+"let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"
+
+"colorscheme eclipse
+"colorscheme greens
+colorscheme 0x7A69_dark
+colorscheme gruvbox
+"colorscheme jellybeans
+"colorscheme base16-gruvbox-dark-hard
+
+
+"airline
+let g:airline_theme= "base16_twilight"
+let g:airline_powerline_fonts = 1
+
+"tagbar
+let g:tagbar_type_rust = {
+\ 'ctagstype' : 'rust',
+\ 'kinds' : [
+	\'T:types,type definitions',
+	\'f:functions,function definitions',
+	\'g:enum,enumeration names',
+	\'s:structure names',
+	\'m:modules,module names',
+	\'c:consts,static constants',
+	\'t:traits',
+	\'i:impls,trait implementations',
+\]
+\}
+
+" Insert the today's date tag for personal notes
+:nnoremap <F4> "=strftime("_________________\n%b %d, %Y\n-------------\n\n")<CR>gP
+:inoremap <F4> <C-R>=strftime("_________________\n%b %d, %Y\n-------------\n\n")<CR>
